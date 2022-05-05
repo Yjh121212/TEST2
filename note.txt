@@ -1,0 +1,104 @@
+sudo apt install git  安装Git
+sudo apt search git 检索
+git config -- global 配置git环境
+
+用户名配置
+git config --global user.name "你的用户名"
+git config -- global user.email "你的邮箱"
+
+git init 创建本地空仓库
+1.mkdir test (test为项目名) 创建目录
+2.cd test 进入目录
+3.git init 初始化当前仓库
+
+ls 查看目录
+ls -ah 查看隐藏目录
+
+git add+文件名 将文件添加到缓存区
+git add后修改文件内容，提交后不会显示第二次修改的内容，必须重新git add一次
+git add --all 将所有改动文件添加到缓存区（会将删除的文件也提交进去）
+
+git commit -m "add new file \"文件名\"(说明)" 提交到本地仓库
+git commit --amend 改写提交
+
+git log 查看日志 
+git log 文件名 查看单个文件可回滚版本
+
+git reset id名 文件名  回滚到指定文件的历史版本
+git reset --hard 回滚代码仓库
+git reset --hard HEAD^ 回滚到上一次
+git reset --hard HEAD~数字   回滚多少次
+
+git status  查看当前仓库状态
+A：未修改
+AM：修改
+Untracked：未提交
+modified：新文件，但未提交
+
+git checkout --file 将文件撤销回到最近一次修改的状态
+
+git rm 删除文件
+
+git reflog 查看提交历史
+
+
+git后取消恢复文件：
+1.git rm 文件名  删除一个文件
+2.git reset  重置所有缓存区操作
+3.git checkout 文件名  取消操作
+
+
+git创建分支
+git checkout -b 分支名  创建一个分支
+git branch 查看分支
+
+git切换分支
+git checkout 
+
+git 合并分支
+git merge
+
+git强制合并分支：
+git merge master --allow-unrelated-histories
+
+git查看分支
+git branch -a
+
+git拉取远程所有分支：
+git fetch
+
+git删除本地分支：
+git branch -D 分支名
+
+git修改分支名称：
+git branch -m 分支名 新的分支名
+
+git clone -b 分支名 仓库地址来指定分支
+
+git保存当前工作切换分支：
+git stash
+git stash list 查看储存了多少工作状态
+git stash pop会将list保存的列表也给删除掉
+git stash apply 不会删除列表里的内容会默认恢复第一个
+如果想恢复指定内容可以使用git stash apply list名称
+git stash drop list 名称  移除指定list
+git stash clear 移除所有lsit
+git stash show 查看栈中最新保存的stash和当前目录的差异。
+
+将别的分支修改转移到自己的分支：
+git cherry-pick
+
+git remote show origin 查看远程仓库信息
+git remote prune origin 刷新本地仓库
+
+
+Git新增分支操作
+git switch 分支名 切换分支
+git switch -d  切换到commit ID
+git switch -b 合并分支
+git switch -c 创建分支
+git restore 文件名 撤销提交与修改
+
+
+
+
